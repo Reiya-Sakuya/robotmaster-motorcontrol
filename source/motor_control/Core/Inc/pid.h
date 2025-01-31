@@ -1,4 +1,8 @@
     typedef struct pid
     {
-        /* data */
+        float kp;
+        float ki;
+        float dk;
     }pid_t;
+
+    float pid_init(float kp,float ki,float kd);

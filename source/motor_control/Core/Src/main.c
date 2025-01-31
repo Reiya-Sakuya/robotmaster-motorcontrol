@@ -21,7 +21,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bsp_dwt.h"
+#include "motor_simulation.h"
+//#include "motor_simulationM3.lib"
+#include "pid.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +46,11 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-
+motorObject_t Motor; 
+pid_t PID;
+uint32_t DWT_CNT;
+float dt;
+float t;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,7 +97,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  DWT_Init(72);
+  //Motor_Object_Init(&Motor);
   /* USER CODE END 2 */
 
   /* Infinite loop */
