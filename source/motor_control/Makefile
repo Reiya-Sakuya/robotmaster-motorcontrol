@@ -145,8 +145,8 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT = STM32F103RCTx_FLASH.ld
 
 # libraries
-LIBS = -lc -lm -lnosys 
-LIBDIR = -L${PWD}/motor_simulation/motor_simulationM3.lib
+LIBS = -lc -lm -lnosys "D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib"
+LIBDIR = -L"D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation"
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections 
 
 # default action: build all
