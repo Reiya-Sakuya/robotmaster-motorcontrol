@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* USER CODE END PTD */
   33:Core/Src/main.c **** 
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 2
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 2
 
 
   34:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   88:Core/Src/main.c ****   /* Configure the system clock */
   89:Core/Src/main.c ****   SystemClock_Config();
   90:Core/Src/main.c **** 
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 3
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 3
 
 
   91:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  145:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
  146:Core/Src/main.c **** 
  147:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 4
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 4
 
 
  148:Core/Src/main.c ****   {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  194:Core/Src/main.c **** /* USER CODE END MX_GPIO_Init_1 */
  195:Core/Src/main.c **** 
  196:Core/Src/main.c ****   /* GPIO Ports Clock Enable */
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 5
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 5
 
 
  197:Core/Src/main.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   83              		.thumb_func
   85              	Error_Handler:
   86              	.LFB69:
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 6
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 6
 
 
  203:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
   32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 7
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 7
 
 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 8
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 8
 
 
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
   99              		.loc 2 142 3 view .LVU17
  100              		.syntax unified
  101              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 9
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 9
 
 
  102 0000 72B6     		cpsid i
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  146              		.loc 1 171 3 is_stmt 1 view .LVU28
  171:Core/Src/main.c ****   huart1.Init.Parity = UART_PARITY_NONE;
  147              		.loc 1 171 24 is_stmt 0 view .LVU29
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 10
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 10
 
 
  148 0012 C360     		str	r3, [r0, #12]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  119:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
  191              		.loc 1 119 1 view -0
  192              		.cfi_startproc
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 11
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 11
 
 
  193              		@ args = 0, pretend = 0, frame = 64
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  233              		.loc 1 131 3 is_stmt 1 view .LVU57
  131:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
  234              		.loc 1 131 35 is_stmt 0 view .LVU58
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 12
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 12
 
 
  235 002a 0E93     		str	r3, [sp, #56]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  271              		.loc 1 147 6 discriminator 1 view .LVU76
  272 0054 20B9     		cbnz	r0, .L18
  151:Core/Src/main.c **** 
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 13
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 13
 
 
  273              		.loc 1 151 1 view .LVU77
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  322 000e FFF7FEFF 		bl	MX_USART1_UART_Init
  323              	.LVL10:
   99:Core/Src/main.c ****   Motor_Object_Init(&Motor);
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 14
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 14
 
 
  324              		.loc 1 99 3 view .LVU85
@@ -823,7 +823,9 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  366              		.section	.bss.PID,"aw",%nobits
  367              		.align	2
  370              	PID:
- 371 0000 00000000 		.space	12
+ 371 0000 00000000 		.space	20
+ 371      00000000 
+ 371      00000000 
  371      00000000 
  371      00000000 
  372              		.global	Motor
@@ -836,11 +838,11 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  378      00000000 
  378      00000000 
  379              		.global	huart1
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 15
+
+
  380              		.section	.bss.huart1,"aw",%nobits
  381              		.align	2
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 15
-
-
  384              	huart1:
  385 0000 00000000 		.space	72
  385      00000000 
@@ -862,36 +864,36 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 1
  398              		.file 13 "Core/Inc/bsp_dwt.h"
  399              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
  400              		.file 15 "<built-in>"
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s 			page 16
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:74     .text.MX_GPIO_Init:0000002c $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:79     .text.Error_Handler:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:85     .text.Error_Handler:00000000 Error_Handler
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:117    .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:122    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:177    .text.MX_USART1_UART_Init:0000002c $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:384    .bss.huart1:00000000 huart1
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:183    .text.SystemClock_Config:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:189    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:294    .text.main:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:300    .text.main:00000000 main
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:340    .text.main:00000020 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:377    .bss.Motor:00000000 Motor
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:349    .bss.t:00000000 t
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:346    .bss.t:00000000 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:356    .bss.dt:00000000 dt
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:353    .bss.dt:00000000 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:363    .bss.DWT_CNT:00000000 DWT_CNT
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:360    .bss.DWT_CNT:00000000 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:370    .bss.PID:00000000 PID
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:367    .bss.PID:00000000 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:374    .bss.Motor:00000000 $d
-C:\Users\yukisaki\AppData\Local\Temp\ccB2thLM.s:381    .bss.huart1:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:74     .text.MX_GPIO_Init:0000002c $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:79     .text.Error_Handler:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:85     .text.Error_Handler:00000000 Error_Handler
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:117    .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:122    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:177    .text.MX_USART1_UART_Init:0000002c $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:384    .bss.huart1:00000000 huart1
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:183    .text.SystemClock_Config:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:189    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:294    .text.main:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:300    .text.main:00000000 main
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:340    .text.main:00000020 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:377    .bss.Motor:00000000 Motor
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:349    .bss.t:00000000 t
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:346    .bss.t:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:356    .bss.dt:00000000 dt
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:353    .bss.dt:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:363    .bss.DWT_CNT:00000000 DWT_CNT
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:360    .bss.DWT_CNT:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:370    .bss.PID:00000000 PID
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:367    .bss.PID:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:374    .bss.Motor:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccR7u5dY.s:381    .bss.huart1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init

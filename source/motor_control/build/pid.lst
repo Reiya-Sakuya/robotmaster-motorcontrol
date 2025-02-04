@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccVryWZR.s 			page 1
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -26,32 +26,259 @@ ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccVryWZR.s 			page 1
   23              		.thumb_func
   25              	pid_init:
   26              	.LVL0:
-  27              	.LFB0:
-   1:Core/Src/pid.c **** float pid_init(float kp,float ki,float kd)
-   2:Core/Src/pid.c **** {
-  28              		.loc 1 2 1 view -0
+  27              	.LFB65:
+   1:Core/Src/pid.c **** #include "math.h"
+   2:Core/Src/pid.c **** #include "pid.h"
+   3:Core/Src/pid.c **** #include "main.h"
+   4:Core/Src/pid.c **** 
+   5:Core/Src/pid.c **** float prev_err, intergral_err=0;
+   6:Core/Src/pid.c **** extern float dt;
+   7:Core/Src/pid.c **** 
+   8:Core/Src/pid.c **** float pid_init(pid_t *args,float arg_kp,float arg_ki,float arg_kd,float top,float bottom)
+   9:Core/Src/pid.c **** {
+  28              		.loc 1 9 1 view -0
   29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 0
+  30              		@ args = 8, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
-   3:Core/Src/pid.c ****     return 0;
-  33              		.loc 1 3 5 view .LVU1
-   4:Core/Src/pid.c **** }...
-  34              		.loc 1 4 1 is_stmt 0 view .LVU2
-  35 0000 0020     		movs	r0, #0
-  36              	.LVL1:
-  37              		.loc 1 4 1 view .LVU3
-  38 0002 7047     		bx	lr
-  39              		.cfi_endproc
-  40              	.LFE0:
-  42              		.text
-  43              	.Letext0:
-ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccVryWZR.s 			page 2
+  10:Core/Src/pid.c ****     args->kp = arg_kp;
+  33              		.loc 1 10 5 view .LVU1
+  34              		.loc 1 10 14 is_stmt 0 view .LVU2
+  35 0000 0160     		str	r1, [r0]	@ float
+  11:Core/Src/pid.c ****     args->ki = arg_ki;
+  36              		.loc 1 11 5 is_stmt 1 view .LVU3
+  37              		.loc 1 11 14 is_stmt 0 view .LVU4
+  38 0002 4260     		str	r2, [r0, #4]	@ float
+  12:Core/Src/pid.c ****     args->kd = arg_kd;
+  39              		.loc 1 12 5 is_stmt 1 view .LVU5
+  40              		.loc 1 12 14 is_stmt 0 view .LVU6
+  41 0004 8360     		str	r3, [r0, #8]	@ float
+  13:Core/Src/pid.c ****     args->integral_top = top;
+  42              		.loc 1 13 5 is_stmt 1 view .LVU7
+  43              		.loc 1 13 24 is_stmt 0 view .LVU8
+  44 0006 009B     		ldr	r3, [sp]	@ float
+  45              	.LVL1:
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 2
+
+
+  46              		.loc 1 13 24 view .LVU9
+  47 0008 C360     		str	r3, [r0, #12]	@ float
+  14:Core/Src/pid.c ****     args->integral_bottom = bottom;
+  48              		.loc 1 14 5 is_stmt 1 view .LVU10
+  49              		.loc 1 14 27 is_stmt 0 view .LVU11
+  50 000a 019B     		ldr	r3, [sp, #4]	@ float
+  51 000c 0361     		str	r3, [r0, #16]	@ float
+  15:Core/Src/pid.c ****     return 0;
+  52              		.loc 1 15 5 is_stmt 1 view .LVU12
+  16:Core/Src/pid.c **** }
+  53              		.loc 1 16 1 is_stmt 0 view .LVU13
+  54 000e 0020     		movs	r0, #0
+  55              	.LVL2:
+  56              		.loc 1 16 1 view .LVU14
+  57 0010 7047     		bx	lr
+  58              		.cfi_endproc
+  59              	.LFE65:
+  61              		.global	__aeabi_fsub
+  62              		.global	__aeabi_fmul
+  63              		.global	__aeabi_fadd
+  64              		.global	__aeabi_fcmpgt
+  65              		.global	__aeabi_fcmplt
+  66              		.global	__aeabi_fdiv
+  67              		.section	.text.calc_pid,"ax",%progbits
+  68              		.align	1
+  69              		.global	calc_pid
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	calc_pid:
+  75              	.LVL3:
+  76              	.LFB66:
+  17:Core/Src/pid.c **** 
+  18:Core/Src/pid.c **** float calc_pid(pid_t *args,float err)
+  19:Core/Src/pid.c **** {
+  77              		.loc 1 19 1 is_stmt 1 view -0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		.loc 1 19 1 is_stmt 0 view .LVU16
+  82 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+  83              	.LCFI0:
+  84              		.cfi_def_cfa_offset 32
+  85              		.cfi_offset 3, -32
+  86              		.cfi_offset 4, -28
+  87              		.cfi_offset 5, -24
+  88              		.cfi_offset 6, -20
+  89              		.cfi_offset 7, -16
+  90              		.cfi_offset 8, -12
+  91              		.cfi_offset 9, -8
+  92              		.cfi_offset 14, -4
+  93 0004 0446     		mov	r4, r0
+  94 0006 0D46     		mov	r5, r1
+  20:Core/Src/pid.c ****     float sum,d_err;
+  95              		.loc 1 20 5 is_stmt 1 view .LVU17
+  21:Core/Src/pid.c ****     d_err = err-prev_err;
+  96              		.loc 1 21 5 view .LVU18
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 3
+
+
+  97              		.loc 1 21 11 is_stmt 0 view .LVU19
+  98 0008 244B     		ldr	r3, .L11
+  99 000a 1968     		ldr	r1, [r3]	@ float
+ 100              	.LVL4:
+ 101              		.loc 1 21 11 view .LVU20
+ 102 000c 2846     		mov	r0, r5
+ 103              	.LVL5:
+ 104              		.loc 1 21 11 view .LVU21
+ 105 000e FFF7FEFF 		bl	__aeabi_fsub
+ 106              	.LVL6:
+ 107 0012 0746     		mov	r7, r0
+ 108              	.LVL7:
+  22:Core/Src/pid.c ****     intergral_err += err*dt;
+ 109              		.loc 1 22 5 is_stmt 1 view .LVU22
+ 110              		.loc 1 22 25 is_stmt 0 view .LVU23
+ 111 0014 224B     		ldr	r3, .L11+4
+ 112 0016 D3F80080 		ldr	r8, [r3]	@ float
+ 113 001a 2946     		mov	r1, r5
+ 114 001c 4046     		mov	r0, r8
+ 115              	.LVL8:
+ 116              		.loc 1 22 25 view .LVU24
+ 117 001e FFF7FEFF 		bl	__aeabi_fmul
+ 118              	.LVL9:
+ 119              		.loc 1 22 19 view .LVU25
+ 120 0022 DFF88090 		ldr	r9, .L11+8
+ 121 0026 D9F80010 		ldr	r1, [r9]	@ float
+ 122 002a FFF7FEFF 		bl	__aeabi_fadd
+ 123              	.LVL10:
+ 124 002e 0646     		mov	r6, r0
+ 125 0030 C9F80000 		str	r0, [r9]	@ float
+  23:Core/Src/pid.c ****     if(intergral_err>(args->integral_top)) intergral_err = args->integral_top;
+ 126              		.loc 1 23 5 is_stmt 1 view .LVU26
+ 127              		.loc 1 23 27 is_stmt 0 view .LVU27
+ 128 0034 D4F80C90 		ldr	r9, [r4, #12]	@ float
+ 129              		.loc 1 23 7 view .LVU28
+ 130 0038 4946     		mov	r1, r9
+ 131 003a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 132              	.LVL11:
+ 133 003e 00B3     		cbz	r0, .L9
+ 134              		.loc 1 23 44 is_stmt 1 discriminator 1 view .LVU29
+ 135              		.loc 1 23 58 is_stmt 0 discriminator 1 view .LVU30
+ 136 0040 184B     		ldr	r3, .L11+8
+ 137 0042 C3F80090 		str	r9, [r3]	@ float
+ 138              	.L5:
+  24:Core/Src/pid.c ****     else if (intergral_err<(args->integral_bottom)) intergral_err = args->integral_bottom;
+  25:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 139              		.loc 1 25 5 is_stmt 1 view .LVU31
+ 140              		.loc 1 25 22 is_stmt 0 view .LVU32
+ 141 0046 2946     		mov	r1, r5
+ 142 0048 2068     		ldr	r0, [r4]	@ float
+ 143 004a FFF7FEFF 		bl	__aeabi_fmul
+ 144              	.LVL12:
+ 145 004e 0646     		mov	r6, r0
+ 146              		.loc 1 25 41 view .LVU33
+ 147 0050 144B     		ldr	r3, .L11+8
+ 148 0052 1968     		ldr	r1, [r3]	@ float
+ 149 0054 6068     		ldr	r0, [r4, #4]	@ float
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 4
+
+
+ 150 0056 FFF7FEFF 		bl	__aeabi_fmul
+ 151              	.LVL13:
+ 152 005a 0146     		mov	r1, r0
+ 153              		.loc 1 25 28 view .LVU34
+ 154 005c 3046     		mov	r0, r6
+ 155 005e FFF7FEFF 		bl	__aeabi_fadd
+ 156              	.LVL14:
+ 157 0062 0646     		mov	r6, r0
+ 158              		.loc 1 25 70 view .LVU35
+ 159 0064 3946     		mov	r1, r7
+ 160 0066 A068     		ldr	r0, [r4, #8]	@ float
+ 161 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 162              	.LVL15:
+ 163              		.loc 1 25 76 view .LVU36
+ 164 006c 4146     		mov	r1, r8
+ 165 006e FFF7FEFF 		bl	__aeabi_fdiv
+ 166              	.LVL16:
+ 167 0072 0146     		mov	r1, r0
+ 168              		.loc 1 25 9 view .LVU37
+ 169 0074 3046     		mov	r0, r6
+ 170 0076 FFF7FEFF 		bl	__aeabi_fadd
+ 171              	.LVL17:
+  26:Core/Src/pid.c ****     prev_err = err;
+ 172              		.loc 1 26 5 is_stmt 1 view .LVU38
+ 173              		.loc 1 26 14 is_stmt 0 view .LVU39
+ 174 007a 084B     		ldr	r3, .L11
+ 175 007c 1D60     		str	r5, [r3]	@ float
+  27:Core/Src/pid.c ****     return sum;
+ 176              		.loc 1 27 5 is_stmt 1 view .LVU40
+  28:Core/Src/pid.c **** }
+ 177              		.loc 1 28 1 is_stmt 0 view .LVU41
+ 178 007e BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 179              	.LVL18:
+ 180              	.L9:
+  24:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 181              		.loc 1 24 10 is_stmt 1 view .LVU42
+  24:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 182              		.loc 1 24 33 is_stmt 0 view .LVU43
+ 183 0082 D4F81090 		ldr	r9, [r4, #16]	@ float
+  24:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 184              		.loc 1 24 13 view .LVU44
+ 185 0086 4946     		mov	r1, r9
+ 186 0088 3046     		mov	r0, r6
+ 187 008a FFF7FEFF 		bl	__aeabi_fcmplt
+ 188              	.LVL19:
+ 189 008e 0028     		cmp	r0, #0
+ 190 0090 D9D0     		beq	.L5
+  24:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 191              		.loc 1 24 53 is_stmt 1 discriminator 1 view .LVU45
+  24:Core/Src/pid.c ****     sum = ((args->kp)*err) + ((args->ki)*intergral_err) + ((args->kd)*d_err/dt);
+ 192              		.loc 1 24 67 is_stmt 0 discriminator 1 view .LVU46
+ 193 0092 044B     		ldr	r3, .L11+8
+ 194 0094 C3F80090 		str	r9, [r3]	@ float
+ 195 0098 D5E7     		b	.L5
+ 196              	.L12:
+ 197 009a 00BF     		.align	2
+ 198              	.L11:
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 5
+
+
+ 199 009c 00000000 		.word	prev_err
+ 200 00a0 00000000 		.word	dt
+ 201 00a4 00000000 		.word	intergral_err
+ 202              		.cfi_endproc
+ 203              	.LFE66:
+ 205              		.global	intergral_err
+ 206              		.section	.bss.intergral_err,"aw",%nobits
+ 207              		.align	2
+ 210              	intergral_err:
+ 211 0000 00000000 		.space	4
+ 212              		.global	prev_err
+ 213              		.section	.bss.prev_err,"aw",%nobits
+ 214              		.align	2
+ 217              	prev_err:
+ 218 0000 00000000 		.space	4
+ 219              		.text
+ 220              	.Letext0:
+ 221              		.file 2 "Core/Inc/pid.h"
+ARM GAS  C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 pid.c
-C:\Users\yukisaki\AppData\Local\Temp\ccVryWZR.s:19     .text.pid_init:00000000 $t
-C:\Users\yukisaki\AppData\Local\Temp\ccVryWZR.s:25     .text.pid_init:00000000 pid_init
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:19     .text.pid_init:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:25     .text.pid_init:00000000 pid_init
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:68     .text.calc_pid:00000000 $t
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:74     .text.calc_pid:00000000 calc_pid
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:199    .text.calc_pid:0000009c $d
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:217    .bss.prev_err:00000000 prev_err
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:210    .bss.intergral_err:00000000 intergral_err
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:207    .bss.intergral_err:00000000 $d
+C:\Users\yukisaki\AppData\Local\Temp\ccZvkdwi.s:214    .bss.prev_err:00000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+__aeabi_fsub
+__aeabi_fmul
+__aeabi_fadd
+__aeabi_fcmpgt
+__aeabi_fcmplt
+__aeabi_fdiv
+dt
