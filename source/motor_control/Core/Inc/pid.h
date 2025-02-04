@@ -6,3 +6,5 @@
     }pid_t;
 
     float pid_init(float kp,float ki,float kd);
+
+    float calc_pid(float err);

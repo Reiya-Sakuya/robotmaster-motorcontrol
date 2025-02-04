@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 #include "bsp_dwt.h"
 #include "motor_simulation.h"
-//#include "motor_simulationM3.lib"
 #include "pid.h"
 /* USER CODE END Includes */
 
@@ -98,7 +97,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   DWT_Init(72);
-  //Motor_Object_Init(&Motor);
+  Motor_Object_Init(&Motor);
   /* USER CODE END 2 */
 
   /* Infinite loop */
