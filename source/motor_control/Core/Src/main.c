@@ -33,7 +33,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define KP 0.01
+#define KI 0.01
+#define KD 0.01
+#define I_TOP 10
+#define I_BOTTOM -10
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -98,15 +102,24 @@ int main(void)
   /* USER CODE BEGIN 2 */
   DWT_Init(72);
   Motor_Object_Init(&Motor);
+  pid_init(&PID,KP,KI,KD,I_TOP,I_BOTTOM);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    dt = DWT_GetDeltaT(&DWT_CNT);//利用DWT定时器获得仿真周期
+    t += dt;
+    Current = Get_Motor_Current(&Motor);//读取电机电流
+    Velocity = Get_Motor_Velocity(&Motor);//读取电机转速
+    Angle = Get_Motor_Angle(&Motor);//读取电机角度
+    Input = pid_calc(&PID,0);//自行编写PID计算函数，计算出输入电压
+    Motor_Simulation(&Motor,Input,dt);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    HAL_Delay(1);
   }
   /* USER CODE END 3 */
 }

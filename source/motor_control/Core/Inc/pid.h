@@ -11,6 +11,6 @@ typedef struct pid
 
 float pid_init(pid_t *args,float arg_kp,float arg_ki,float arg_kd,float top,float bottom);
 
-float calc_pid(pid_t *args,float err);
+float pid_calc(pid_t *args,float err);
 
 #endif

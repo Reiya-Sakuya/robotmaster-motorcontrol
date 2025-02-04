@@ -15,7 +15,7 @@ float pid_init(pid_t *args,float arg_kp,float arg_ki,float arg_kd,float top,floa
     return 0;
 }
 
-float calc_pid(pid_t *args,float err)
+float pid_calc(pid_t *args,float err)
 {
     float sum,d_err;
     d_err = err-prev_err;

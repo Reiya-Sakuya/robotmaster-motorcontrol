@@ -162,7 +162,6 @@ Discarded input sections
  .bss.t         0x00000000        0x4 build/main.o
  .bss.dt        0x00000000        0x4 build/main.o
  .bss.DWT_CNT   0x00000000        0x4 build/main.o
- .bss.PID       0x00000000       0x14 build/main.o
  .text          0x00000000        0x0 build/stm32f1xx_it.o
  .data          0x00000000        0x0 build/stm32f1xx_it.o
  .bss           0x00000000        0x0 build/stm32f1xx_it.o
@@ -720,25 +719,11 @@ Discarded input sections
  .text          0x00000000        0x0 build/pid.o
  .data          0x00000000        0x0 build/pid.o
  .bss           0x00000000        0x0 build/pid.o
- .text.pid_init
-                0x00000000       0x12 build/pid.o
  .text.calc_pid
                 0x00000000       0xa8 build/pid.o
  .bss.intergral_err
                 0x00000000        0x4 build/pid.o
  .bss.prev_err  0x00000000        0x4 build/pid.o
- .debug_info    0x00000000      0x2bd build/pid.o
- .debug_abbrev  0x00000000      0x164 build/pid.o
- .debug_loc     0x00000000      0x100 build/pid.o
- .debug_aranges
-                0x00000000       0x28 build/pid.o
- .debug_ranges  0x00000000       0x18 build/pid.o
- .debug_line    0x00000000      0x108 build/pid.o
- .debug_str     0x00000000      0x230 build/pid.o
- .comment       0x00000000       0x13 build/pid.o
- .debug_frame   0x00000000       0x44 build/pid.o
- .ARM.attributes
-                0x00000000       0x2d build/pid.o
  .text          0x00000000        0x0 build/bsp_dwt.o
  .data          0x00000000        0x0 build/bsp_dwt.o
  .bss           0x00000000        0x0 build/bsp_dwt.o
@@ -1754,7 +1739,7 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.
                 0x08000000                g_pfnVectors
                 0x080001e4                        . = ALIGN (0x4)
 
-.text           0x080001e4     0x14b8
+.text           0x080001e4     0x14f0
                 0x080001e4                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001e4       0xa0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
@@ -1776,287 +1761,289 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.
  .text.SystemClock_Config
                 0x0800037c       0x64 build/main.o
                 0x0800037c                SystemClock_Config
- .text.main     0x080003e0       0x24 build/main.o
+ .text.main     0x080003e0       0x4c build/main.o
                 0x080003e0                main
  .text.NMI_Handler
-                0x08000404        0x2 build/stm32f1xx_it.o
-                0x08000404                NMI_Handler
+                0x0800042c        0x2 build/stm32f1xx_it.o
+                0x0800042c                NMI_Handler
  .text.HardFault_Handler
-                0x08000406        0x2 build/stm32f1xx_it.o
-                0x08000406                HardFault_Handler
+                0x0800042e        0x2 build/stm32f1xx_it.o
+                0x0800042e                HardFault_Handler
  .text.MemManage_Handler
-                0x08000408        0x2 build/stm32f1xx_it.o
-                0x08000408                MemManage_Handler
+                0x08000430        0x2 build/stm32f1xx_it.o
+                0x08000430                MemManage_Handler
  .text.BusFault_Handler
-                0x0800040a        0x2 build/stm32f1xx_it.o
-                0x0800040a                BusFault_Handler
+                0x08000432        0x2 build/stm32f1xx_it.o
+                0x08000432                BusFault_Handler
  .text.UsageFault_Handler
-                0x0800040c        0x2 build/stm32f1xx_it.o
-                0x0800040c                UsageFault_Handler
+                0x08000434        0x2 build/stm32f1xx_it.o
+                0x08000434                UsageFault_Handler
  .text.SVC_Handler
-                0x0800040e        0x2 build/stm32f1xx_it.o
-                0x0800040e                SVC_Handler
+                0x08000436        0x2 build/stm32f1xx_it.o
+                0x08000436                SVC_Handler
  .text.DebugMon_Handler
-                0x08000410        0x2 build/stm32f1xx_it.o
-                0x08000410                DebugMon_Handler
+                0x08000438        0x2 build/stm32f1xx_it.o
+                0x08000438                DebugMon_Handler
  .text.PendSV_Handler
-                0x08000412        0x2 build/stm32f1xx_it.o
-                0x08000412                PendSV_Handler
+                0x0800043a        0x2 build/stm32f1xx_it.o
+                0x0800043a                PendSV_Handler
  .text.SysTick_Handler
-                0x08000414        0x8 build/stm32f1xx_it.o
-                0x08000414                SysTick_Handler
+                0x0800043c        0x8 build/stm32f1xx_it.o
+                0x0800043c                SysTick_Handler
  .text.USART1_IRQHandler
-                0x0800041c       0x10 build/stm32f1xx_it.o
-                0x0800041c                USART1_IRQHandler
+                0x08000444       0x10 build/stm32f1xx_it.o
+                0x08000444                USART1_IRQHandler
  .text.HAL_MspInit
-                0x0800042c       0x44 build/stm32f1xx_hal_msp.o
-                0x0800042c                HAL_MspInit
+                0x08000454       0x44 build/stm32f1xx_hal_msp.o
+                0x08000454                HAL_MspInit
  .text.HAL_UART_MspInit
-                0x08000470       0x88 build/stm32f1xx_hal_msp.o
-                0x08000470                HAL_UART_MspInit
+                0x08000498       0x88 build/stm32f1xx_hal_msp.o
+                0x08000498                HAL_UART_MspInit
  .text.UART_EndRxTransfer
-                0x080004f8       0x5c build/stm32f1xx_hal_uart.o
+                0x08000520       0x5c build/stm32f1xx_hal_uart.o
  .text.UART_Transmit_IT
-                0x08000554       0x60 build/stm32f1xx_hal_uart.o
+                0x0800057c       0x60 build/stm32f1xx_hal_uart.o
  .text.UART_SetConfig
-                0x080005b4       0x94 build/stm32f1xx_hal_uart.o
+                0x080005dc       0x94 build/stm32f1xx_hal_uart.o
  .text.HAL_UART_Init
-                0x08000648       0x60 build/stm32f1xx_hal_uart.o
-                0x08000648                HAL_UART_Init
+                0x08000670       0x60 build/stm32f1xx_hal_uart.o
+                0x08000670                HAL_UART_Init
  .text.HAL_UART_TxCpltCallback
-                0x080006a8        0x2 build/stm32f1xx_hal_uart.o
-                0x080006a8                HAL_UART_TxCpltCallback
+                0x080006d0        0x2 build/stm32f1xx_hal_uart.o
+                0x080006d0                HAL_UART_TxCpltCallback
  .text.UART_EndTransmit_IT
-                0x080006aa       0x1a build/stm32f1xx_hal_uart.o
+                0x080006d2       0x1a build/stm32f1xx_hal_uart.o
  .text.HAL_UART_RxCpltCallback
-                0x080006c4        0x2 build/stm32f1xx_hal_uart.o
-                0x080006c4                HAL_UART_RxCpltCallback
+                0x080006ec        0x2 build/stm32f1xx_hal_uart.o
+                0x080006ec                HAL_UART_RxCpltCallback
  .text.HAL_UART_ErrorCallback
-                0x080006c6        0x2 build/stm32f1xx_hal_uart.o
-                0x080006c6                HAL_UART_ErrorCallback
+                0x080006ee        0x2 build/stm32f1xx_hal_uart.o
+                0x080006ee                HAL_UART_ErrorCallback
  .text.UART_DMAAbortOnError
-                0x080006c8       0x10 build/stm32f1xx_hal_uart.o
+                0x080006f0       0x10 build/stm32f1xx_hal_uart.o
  .text.HAL_UARTEx_RxEventCallback
-                0x080006d8        0x2 build/stm32f1xx_hal_uart.o
-                0x080006d8                HAL_UARTEx_RxEventCallback
+                0x08000700        0x2 build/stm32f1xx_hal_uart.o
+                0x08000700                HAL_UARTEx_RxEventCallback
  .text.UART_Receive_IT
-                0x080006da       0xe6 build/stm32f1xx_hal_uart.o
+                0x08000702       0xe6 build/stm32f1xx_hal_uart.o
  .text.HAL_UART_IRQHandler
-                0x080007c0      0x284 build/stm32f1xx_hal_uart.o
-                0x080007c0                HAL_UART_IRQHandler
+                0x080007e8      0x284 build/stm32f1xx_hal_uart.o
+                0x080007e8                HAL_UART_IRQHandler
  .text.HAL_InitTick
-                0x08000a44       0x4c build/stm32f1xx_hal.o
-                0x08000a44                HAL_InitTick
+                0x08000a6c       0x4c build/stm32f1xx_hal.o
+                0x08000a6c                HAL_InitTick
  .text.HAL_Init
-                0x08000a90       0x24 build/stm32f1xx_hal.o
-                0x08000a90                HAL_Init
+                0x08000ab8       0x24 build/stm32f1xx_hal.o
+                0x08000ab8                HAL_Init
  .text.HAL_IncTick
-                0x08000ab4       0x18 build/stm32f1xx_hal.o
-                0x08000ab4                HAL_IncTick
+                0x08000adc       0x18 build/stm32f1xx_hal.o
+                0x08000adc                HAL_IncTick
  .text.HAL_GetTick
-                0x08000acc        0xc build/stm32f1xx_hal.o
-                0x08000acc                HAL_GetTick
+                0x08000af4        0xc build/stm32f1xx_hal.o
+                0x08000af4                HAL_GetTick
  .text.RCC_Delay
-                0x08000ad8       0x2c build/stm32f1xx_hal_rcc.o
+                0x08000b00       0x2c build/stm32f1xx_hal_rcc.o
  .text.HAL_RCC_OscConfig
-                0x08000b04      0x410 build/stm32f1xx_hal_rcc.o
-                0x08000b04                HAL_RCC_OscConfig
+                0x08000b2c      0x410 build/stm32f1xx_hal_rcc.o
+                0x08000b2c                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08000f14       0x54 build/stm32f1xx_hal_rcc.o
-                0x08000f14                HAL_RCC_GetSysClockFreq
+                0x08000f3c       0x54 build/stm32f1xx_hal_rcc.o
+                0x08000f3c                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x08000f68      0x16c build/stm32f1xx_hal_rcc.o
-                0x08000f68                HAL_RCC_ClockConfig
+                0x08000f90      0x16c build/stm32f1xx_hal_rcc.o
+                0x08000f90                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetHCLKFreq
-                0x080010d4        0xc build/stm32f1xx_hal_rcc.o
-                0x080010d4                HAL_RCC_GetHCLKFreq
+                0x080010fc        0xc build/stm32f1xx_hal_rcc.o
+                0x080010fc                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x080010e0       0x20 build/stm32f1xx_hal_rcc.o
-                0x080010e0                HAL_RCC_GetPCLK1Freq
+                0x08001108       0x20 build/stm32f1xx_hal_rcc.o
+                0x08001108                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08001100       0x20 build/stm32f1xx_hal_rcc.o
-                0x08001100                HAL_RCC_GetPCLK2Freq
+                0x08001128       0x20 build/stm32f1xx_hal_rcc.o
+                0x08001128                HAL_RCC_GetPCLK2Freq
  .text.HAL_GPIO_Init
-                0x08001120      0x238 build/stm32f1xx_hal_gpio.o
-                0x08001120                HAL_GPIO_Init
+                0x08001148      0x238 build/stm32f1xx_hal_gpio.o
+                0x08001148                HAL_GPIO_Init
  .text.HAL_DMA_Abort
-                0x08001358       0x46 build/stm32f1xx_hal_dma.o
-                0x08001358                HAL_DMA_Abort
- *fill*         0x0800139e        0x2 
+                0x08001380       0x46 build/stm32f1xx_hal_dma.o
+                0x08001380                HAL_DMA_Abort
+ *fill*         0x080013c6        0x2 
  .text.HAL_DMA_Abort_IT
-                0x080013a0      0x16c build/stm32f1xx_hal_dma.o
-                0x080013a0                HAL_DMA_Abort_IT
+                0x080013c8      0x16c build/stm32f1xx_hal_dma.o
+                0x080013c8                HAL_DMA_Abort_IT
  .text.__NVIC_SetPriority
-                0x0800150c       0x28 build/stm32f1xx_hal_cortex.o
+                0x08001534       0x28 build/stm32f1xx_hal_cortex.o
  .text.NVIC_EncodePriority
-                0x08001534       0x3e build/stm32f1xx_hal_cortex.o
- *fill*         0x08001572        0x2 
+                0x0800155c       0x3e build/stm32f1xx_hal_cortex.o
+ *fill*         0x0800159a        0x2 
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001574       0x24 build/stm32f1xx_hal_cortex.o
-                0x08001574                HAL_NVIC_SetPriorityGrouping
+                0x0800159c       0x24 build/stm32f1xx_hal_cortex.o
+                0x0800159c                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08001598       0x20 build/stm32f1xx_hal_cortex.o
-                0x08001598                HAL_NVIC_SetPriority
+                0x080015c0       0x20 build/stm32f1xx_hal_cortex.o
+                0x080015c0                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x080015b8       0x1c build/stm32f1xx_hal_cortex.o
-                0x080015b8                HAL_NVIC_EnableIRQ
+                0x080015e0       0x1c build/stm32f1xx_hal_cortex.o
+                0x080015e0                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x080015d4       0x28 build/stm32f1xx_hal_cortex.o
-                0x080015d4                HAL_SYSTICK_Config
+                0x080015fc       0x28 build/stm32f1xx_hal_cortex.o
+                0x080015fc                HAL_SYSTICK_Config
  .text.SystemInit
-                0x080015fc        0x2 build/system_stm32f1xx.o
-                0x080015fc                SystemInit
- *fill*         0x080015fe        0x2 
+                0x08001624        0x2 build/system_stm32f1xx.o
+                0x08001624                SystemInit
+ .text.pid_init
+                0x08001626       0x12 build/pid.o
+                0x08001626                pid_init
  .text.DWT_Init
-                0x08001600       0x38 build/bsp_dwt.o
-                0x08001600                DWT_Init
+                0x08001638       0x38 build/bsp_dwt.o
+                0x08001638                DWT_Init
  .text.Reset_Handler
-                0x08001638       0x48 build/startup_stm32f103xe.o
-                0x08001638                Reset_Handler
+                0x08001670       0x48 build/startup_stm32f103xe.o
+                0x08001670                Reset_Handler
  .text.Default_Handler
-                0x08001680        0x2 build/startup_stm32f103xe.o
-                0x08001680                RTC_Alarm_IRQHandler
-                0x08001680                EXTI2_IRQHandler
-                0x08001680                TIM8_TRG_COM_IRQHandler
-                0x08001680                TIM8_CC_IRQHandler
-                0x08001680                TIM1_CC_IRQHandler
-                0x08001680                TIM6_IRQHandler
-                0x08001680                PVD_IRQHandler
-                0x08001680                SDIO_IRQHandler
-                0x08001680                EXTI3_IRQHandler
-                0x08001680                EXTI0_IRQHandler
-                0x08001680                I2C2_EV_IRQHandler
-                0x08001680                ADC1_2_IRQHandler
-                0x08001680                SPI1_IRQHandler
-                0x08001680                TAMPER_IRQHandler
-                0x08001680                TIM8_UP_IRQHandler
-                0x08001680                DMA2_Channel2_IRQHandler
-                0x08001680                DMA1_Channel4_IRQHandler
-                0x08001680                USART3_IRQHandler
-                0x08001680                RTC_IRQHandler
-                0x08001680                DMA1_Channel7_IRQHandler
-                0x08001680                CAN1_RX1_IRQHandler
-                0x08001680                UART5_IRQHandler
-                0x08001680                ADC3_IRQHandler
-                0x08001680                TIM4_IRQHandler
-                0x08001680                DMA2_Channel1_IRQHandler
-                0x08001680                I2C1_EV_IRQHandler
-                0x08001680                DMA1_Channel6_IRQHandler
-                0x08001680                UART4_IRQHandler
-                0x08001680                TIM3_IRQHandler
-                0x08001680                RCC_IRQHandler
-                0x08001680                TIM1_TRG_COM_IRQHandler
-                0x08001680                DMA1_Channel1_IRQHandler
-                0x08001680                Default_Handler
-                0x08001680                EXTI15_10_IRQHandler
-                0x08001680                TIM7_IRQHandler
-                0x08001680                TIM5_IRQHandler
-                0x08001680                EXTI9_5_IRQHandler
-                0x08001680                SPI2_IRQHandler
-                0x08001680                DMA1_Channel5_IRQHandler
-                0x08001680                EXTI4_IRQHandler
-                0x08001680                USB_LP_CAN1_RX0_IRQHandler
-                0x08001680                USB_HP_CAN1_TX_IRQHandler
-                0x08001680                DMA1_Channel3_IRQHandler
-                0x08001680                FSMC_IRQHandler
-                0x08001680                TIM1_UP_IRQHandler
-                0x08001680                WWDG_IRQHandler
-                0x08001680                TIM2_IRQHandler
-                0x08001680                TIM1_BRK_IRQHandler
-                0x08001680                EXTI1_IRQHandler
-                0x08001680                DMA2_Channel4_5_IRQHandler
-                0x08001680                USART2_IRQHandler
-                0x08001680                I2C2_ER_IRQHandler
-                0x08001680                DMA1_Channel2_IRQHandler
-                0x08001680                TIM8_BRK_IRQHandler
-                0x08001680                CAN1_SCE_IRQHandler
-                0x08001680                FLASH_IRQHandler
-                0x08001680                SPI3_IRQHandler
-                0x08001680                I2C1_ER_IRQHandler
-                0x08001680                USBWakeUp_IRQHandler
-                0x08001680                DMA2_Channel3_IRQHandler
+                0x080016b8        0x2 build/startup_stm32f103xe.o
+                0x080016b8                RTC_Alarm_IRQHandler
+                0x080016b8                EXTI2_IRQHandler
+                0x080016b8                TIM8_TRG_COM_IRQHandler
+                0x080016b8                TIM8_CC_IRQHandler
+                0x080016b8                TIM1_CC_IRQHandler
+                0x080016b8                TIM6_IRQHandler
+                0x080016b8                PVD_IRQHandler
+                0x080016b8                SDIO_IRQHandler
+                0x080016b8                EXTI3_IRQHandler
+                0x080016b8                EXTI0_IRQHandler
+                0x080016b8                I2C2_EV_IRQHandler
+                0x080016b8                ADC1_2_IRQHandler
+                0x080016b8                SPI1_IRQHandler
+                0x080016b8                TAMPER_IRQHandler
+                0x080016b8                TIM8_UP_IRQHandler
+                0x080016b8                DMA2_Channel2_IRQHandler
+                0x080016b8                DMA1_Channel4_IRQHandler
+                0x080016b8                USART3_IRQHandler
+                0x080016b8                RTC_IRQHandler
+                0x080016b8                DMA1_Channel7_IRQHandler
+                0x080016b8                CAN1_RX1_IRQHandler
+                0x080016b8                UART5_IRQHandler
+                0x080016b8                ADC3_IRQHandler
+                0x080016b8                TIM4_IRQHandler
+                0x080016b8                DMA2_Channel1_IRQHandler
+                0x080016b8                I2C1_EV_IRQHandler
+                0x080016b8                DMA1_Channel6_IRQHandler
+                0x080016b8                UART4_IRQHandler
+                0x080016b8                TIM3_IRQHandler
+                0x080016b8                RCC_IRQHandler
+                0x080016b8                TIM1_TRG_COM_IRQHandler
+                0x080016b8                DMA1_Channel1_IRQHandler
+                0x080016b8                Default_Handler
+                0x080016b8                EXTI15_10_IRQHandler
+                0x080016b8                TIM7_IRQHandler
+                0x080016b8                TIM5_IRQHandler
+                0x080016b8                EXTI9_5_IRQHandler
+                0x080016b8                SPI2_IRQHandler
+                0x080016b8                DMA1_Channel5_IRQHandler
+                0x080016b8                EXTI4_IRQHandler
+                0x080016b8                USB_LP_CAN1_RX0_IRQHandler
+                0x080016b8                USB_HP_CAN1_TX_IRQHandler
+                0x080016b8                DMA1_Channel3_IRQHandler
+                0x080016b8                FSMC_IRQHandler
+                0x080016b8                TIM1_UP_IRQHandler
+                0x080016b8                WWDG_IRQHandler
+                0x080016b8                TIM2_IRQHandler
+                0x080016b8                TIM1_BRK_IRQHandler
+                0x080016b8                EXTI1_IRQHandler
+                0x080016b8                DMA2_Channel4_5_IRQHandler
+                0x080016b8                USART2_IRQHandler
+                0x080016b8                I2C2_ER_IRQHandler
+                0x080016b8                DMA1_Channel2_IRQHandler
+                0x080016b8                TIM8_BRK_IRQHandler
+                0x080016b8                CAN1_SCE_IRQHandler
+                0x080016b8                FLASH_IRQHandler
+                0x080016b8                SPI3_IRQHandler
+                0x080016b8                I2C1_ER_IRQHandler
+                0x080016b8                USBWakeUp_IRQHandler
+                0x080016b8                DMA2_Channel3_IRQHandler
  *(.glue_7)
- .glue_7        0x08001682        0x0 linker stubs
+ .glue_7        0x080016ba        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08001682        0x0 linker stubs
+ .glue_7t       0x080016ba        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x08001682        0x2 
- .eh_frame      0x08001684        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
+ *fill*         0x080016ba        0x2 
+ .eh_frame      0x080016bc        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x08001684        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crti.o
-                0x08001684                _init
- .init          0x08001688        0x8 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
+ .init          0x080016bc        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crti.o
+                0x080016bc                _init
+ .init          0x080016c0        0x8 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08001690        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crti.o
-                0x08001690                _fini
- .fini          0x08001694        0x8 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
-                0x0800169c                        . = ALIGN (0x4)
-                0x0800169c                        _etext = .
+ .fini          0x080016c8        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crti.o
+                0x080016c8                _fini
+ .fini          0x080016cc        0x8 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
+                0x080016d4                        . = ALIGN (0x4)
+                0x080016d4                        _etext = .
 
-.vfp11_veneer   0x0800169c        0x0
- .vfp11_veneer  0x0800169c        0x0 linker stubs
+.vfp11_veneer   0x080016d4        0x0
+ .vfp11_veneer  0x080016d4        0x0 linker stubs
 
-.v4_bx          0x0800169c        0x0
- .v4_bx         0x0800169c        0x0 linker stubs
+.v4_bx          0x080016d4        0x0
+ .v4_bx         0x080016d4        0x0 linker stubs
 
-.iplt           0x0800169c        0x0
- .iplt          0x0800169c        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080016d4        0x0
+ .iplt          0x080016d4        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
 
 i.Motor_Object_Init
-                0x0800169c       0x50
+                0x080016d4       0x50
  i.Motor_Object_Init
-                0x0800169c       0x50 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0800169c                Motor_Object_Init
+                0x080016d4       0x50 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x080016d4                Motor_Object_Init
 
-.rodata         0x080016ec       0x2c
-                0x080016ec                        . = ALIGN (0x4)
+.rodata         0x08001724       0x2c
+                0x08001724                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.aPredivFactorTable.0
-                0x080016ec        0x2 build/stm32f1xx_hal_rcc.o
- *fill*         0x080016ee        0x2 
+                0x08001724        0x2 build/stm32f1xx_hal_rcc.o
+ *fill*         0x08001726        0x2 
  .rodata.aPLLMULFactorTable.1
-                0x080016f0       0x10 build/stm32f1xx_hal_rcc.o
+                0x08001728       0x10 build/stm32f1xx_hal_rcc.o
  .rodata.APBPrescTable
-                0x08001700        0x8 build/system_stm32f1xx.o
-                0x08001700                APBPrescTable
+                0x08001738        0x8 build/system_stm32f1xx.o
+                0x08001738                APBPrescTable
  .rodata.AHBPrescTable
-                0x08001708       0x10 build/system_stm32f1xx.o
-                0x08001708                AHBPrescTable
-                0x08001718                        . = ALIGN (0x4)
+                0x08001740       0x10 build/system_stm32f1xx.o
+                0x08001740                AHBPrescTable
+                0x08001750                        . = ALIGN (0x4)
 
-.rel.dyn        0x08001718        0x0
- .rel.iplt      0x08001718        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x08001750        0x0
+ .rel.iplt      0x08001750        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08001718        0x0
-                0x08001718                        __exidx_start = .
+.ARM            0x08001750        0x0
+                0x08001750                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08001718                        __exidx_end = .
+                0x08001750                        __exidx_end = .
 
-.preinit_array  0x08001718        0x0
-                0x08001718                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08001750        0x0
+                0x08001750                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08001718                        PROVIDE (__preinit_array_end = .)
+                0x08001750                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08001718        0x4
-                0x08001718                        PROVIDE (__init_array_start = .)
+.init_array     0x08001750        0x4
+                0x08001750                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08001718        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
-                0x0800171c                        PROVIDE (__init_array_end = .)
+ .init_array    0x08001750        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
+                0x08001754                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x0800171c        0x4
-                0x0800171c                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08001754        0x4
+                0x08001754                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800171c        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
-                0x08001720                        PROVIDE (__fini_array_end = .)
-                0x08001720                        _sidata = LOADADDR (.data)
+ .fini_array    0x08001754        0x4 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
+                0x08001758                        PROVIDE (__fini_array_end = .)
+                0x08001758                        _sidata = LOADADDR (.data)
 
-.data           0x20000000        0xc load address 0x08001720
+.data           0x20000000        0xc load address 0x08001758
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2074,11 +2061,11 @@ i.Motor_Object_Init
                 0x2000000c                        . = ALIGN (0x4)
                 0x2000000c                        _edata = .
 
-.igot.plt       0x2000000c        0x0 load address 0x0800172c
+.igot.plt       0x2000000c        0x0 load address 0x08001764
  .igot.plt      0x2000000c        0x0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
                 0x2000000c                        . = ALIGN (0x4)
 
-.bss            0x2000000c       0xbc load address 0x0800172c
+.bss            0x2000000c       0xd0 load address 0x08001764
                 0x2000000c                        _sbss = .
                 0x2000000c                        __bss_start__ = _sbss
  *(.bss)
@@ -2087,30 +2074,33 @@ i.Motor_Object_Init
                 0x2000000c        0x1 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
  *fill*         0x2000000d        0x3 
  .bss.object.0  0x20000010       0x18 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtbegin.o
- .bss.Motor     0x20000028       0x50 build/main.o
-                0x20000028                Motor
- .bss.huart1    0x20000078       0x48 build/main.o
-                0x20000078                huart1
- .bss.uwTick    0x200000c0        0x4 build/stm32f1xx_hal.o
-                0x200000c0                uwTick
+ .bss.PID       0x20000028       0x14 build/main.o
+                0x20000028                PID
+ .bss.Motor     0x2000003c       0x50 build/main.o
+                0x2000003c                Motor
+ .bss.huart1    0x2000008c       0x48 build/main.o
+                0x2000008c                huart1
+ .bss.uwTick    0x200000d4        0x4 build/stm32f1xx_hal.o
+                0x200000d4                uwTick
  .bss.CPU_FREQ_Hz
-                0x200000c4        0x4 build/bsp_dwt.o
-                0x200000c4                CPU_FREQ_Hz
+                0x200000d8        0x4 build/bsp_dwt.o
+                0x200000d8                CPU_FREQ_Hz
  *(COMMON)
-                0x200000c8                        . = ALIGN (0x4)
-                0x200000c8                        _ebss = .
-                0x200000c8                        __bss_end__ = _ebss
+                0x200000dc                        . = ALIGN (0x4)
+                0x200000dc                        _ebss = .
+                0x200000dc                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200000c8      0x600 load address 0x0800172c
-                0x200000c8                        . = ALIGN (0x8)
+                0x200000dc      0x604 load address 0x08001764
+                0x200000e0                        . = ALIGN (0x8)
+ *fill*         0x200000dc        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x200000c8                        PROVIDE (_end = .)
-                0x200002c8                        . = (. + _Min_Heap_Size)
- *fill*         0x200000c8      0x200 
-                0x200006c8                        . = (. + _Min_Stack_Size)
- *fill*         0x200002c8      0x400 
-                0x200006c8                        . = ALIGN (0x8)
+                0x200000e0                        PROVIDE (_end = .)
+                0x200002e0                        . = (. + _Min_Heap_Size)
+ *fill*         0x200000e0      0x200 
+                0x200006e0                        . = (. + _Min_Stack_Size)
+ *fill*         0x200002e0      0x400 
+                0x200006e0                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2145,104 +2135,109 @@ i.Motor_Object_Init
  .ARM.attributes
                 0x000001df       0x2d build/system_stm32f1xx.o
  .ARM.attributes
-                0x0000020c       0x2d build/bsp_dwt.o
+                0x0000020c       0x2d build/pid.o
  .ARM.attributes
-                0x00000239       0x21 build/startup_stm32f103xe.o
+                0x00000239       0x2d build/bsp_dwt.o
  .ARM.attributes
-                0x0000025a       0x2d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+                0x00000266       0x21 build/startup_stm32f103xe.o
  .ARM.attributes
-                0x00000287       0x2d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+                0x00000287       0x2d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x000002b4       0x48 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x000002b4       0x2d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x000002fc       0x1d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
+                0x000002e1       0x48 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .ARM.attributes
+                0x00000329       0x1d C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp/crtn.o
 OUTPUT(build/motor_control.elf elf32-littlearm)
 LOAD linker stubs
 LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc.a
 LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x00000000     0xb5a4
- .debug_info    0x00000000      0xca8 build/main.o
- .debug_info    0x00000ca8      0x6f9 build/stm32f1xx_it.o
- .debug_info    0x000013a1      0xbcd build/stm32f1xx_hal_msp.o
- .debug_info    0x00001f6e     0x430f build/stm32f1xx_hal_uart.o
- .debug_info    0x0000627d      0x8e6 build/stm32f1xx_hal.o
- .debug_info    0x00006b63      0xb10 build/stm32f1xx_hal_rcc.o
- .debug_info    0x00007673      0x6d7 build/stm32f1xx_hal_gpio.o
- .debug_info    0x00007d4a      0x8d4 build/stm32f1xx_hal_dma.o
- .debug_info    0x0000861e      0xea5 build/stm32f1xx_hal_cortex.o
- .debug_info    0x000094c3      0x26e build/system_stm32f1xx.o
- .debug_info    0x00009731      0x35f build/bsp_dwt.o
- .debug_info    0x00009a90       0x30 build/startup_stm32f103xe.o
- .debug_info    0x00009ac0      0x135 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_info    0x00009bf5      0x10b C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_info    0x00009d00       0xc4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x00009dc4       0xfc D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x00009ec0      0x13c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x00009ffc      0x13c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x0000a138      0x16c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x0000a2a4      0x118 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x0000a3bc      0x11c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x0000a4d8      0x118 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_info    0x0000a5f0      0x30c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000a5f0                __ARM_grp..debug_info$stdint.h$.2_8G1000_iVMQGGhr3g5_300000
-                0x0000a5f0                __ARM_grp.stdint.h.2_8G1000_iVMQGGhr3g5_300000
- .debug_info    0x0000a8fc      0x2c8 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000a8fc                __ARM_grp..debug_info$stdlib.h$.2_AV0000_0_hgF4meTA6_300000
-                0x0000a8fc                __ARM_grp.stdlib.h.2_AV0000_0_hgF4meTA6_300000
- .debug_info    0x0000abc4      0x5ac D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000abc4                __ARM_grp.math.h.2_FA3000_TchhkGiMi$e_700000
-                0x0000abc4                __ARM_grp..debug_info$math.h$.2_FA3000_TchhkGiMi$e_700000
- .debug_info    0x0000b170      0x228 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000b170                __ARM_grp..debug_info$motor_simulation.h$.2_QD0000_GJAm99c4135_300000
-                0x0000b170                __ARM_grp.motor_simulation.h.2_QD0000_GJAm99c4135_300000
- .debug_info    0x0000b398      0x150 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000b398                __ARM_grp..debug_info$motor_simulation.c$.2_UI0000_ynNuPqWoOo8_700000
-                0x0000b398                __ARM_grp.motor_simulation.c.2_UI0000_ynNuPqWoOo8_700000
- .debug_info    0x0000b4e8       0xbc D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000b4e8                __ARM_grp..debug_info$fabsf$.2_oT0000_wJ9jF93aDp2_500000
-                0x0000b4e8                __ARM_grp.fabsf.2_oT0000_wJ9jF93aDp2_500000
+.debug_info     0x00000000     0xb8b0
+ .debug_info    0x00000000      0xcf7 build/main.o
+ .debug_info    0x00000cf7      0x6f9 build/stm32f1xx_it.o
+ .debug_info    0x000013f0      0xbcd build/stm32f1xx_hal_msp.o
+ .debug_info    0x00001fbd     0x430f build/stm32f1xx_hal_uart.o
+ .debug_info    0x000062cc      0x8e6 build/stm32f1xx_hal.o
+ .debug_info    0x00006bb2      0xb10 build/stm32f1xx_hal_rcc.o
+ .debug_info    0x000076c2      0x6d7 build/stm32f1xx_hal_gpio.o
+ .debug_info    0x00007d99      0x8d4 build/stm32f1xx_hal_dma.o
+ .debug_info    0x0000866d      0xea5 build/stm32f1xx_hal_cortex.o
+ .debug_info    0x00009512      0x26e build/system_stm32f1xx.o
+ .debug_info    0x00009780      0x2bd build/pid.o
+ .debug_info    0x00009a3d      0x35f build/bsp_dwt.o
+ .debug_info    0x00009d9c       0x30 build/startup_stm32f103xe.o
+ .debug_info    0x00009dcc      0x135 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_info    0x00009f01      0x10b C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_info    0x0000a00c       0xc4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a0d0       0xfc D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a1cc      0x13c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a308      0x13c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a444      0x16c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a5b0      0x118 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a6c8      0x11c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a7e4      0x118 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_info    0x0000a8fc      0x30c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000a8fc                __ARM_grp..debug_info$stdint.h$.2_8G1000_iVMQGGhr3g5_300000
+                0x0000a8fc                __ARM_grp.stdint.h.2_8G1000_iVMQGGhr3g5_300000
+ .debug_info    0x0000ac08      0x2c8 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000ac08                __ARM_grp..debug_info$stdlib.h$.2_AV0000_0_hgF4meTA6_300000
+                0x0000ac08                __ARM_grp.stdlib.h.2_AV0000_0_hgF4meTA6_300000
+ .debug_info    0x0000aed0      0x5ac D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000aed0                __ARM_grp.math.h.2_FA3000_TchhkGiMi$e_700000
+                0x0000aed0                __ARM_grp..debug_info$math.h$.2_FA3000_TchhkGiMi$e_700000
+ .debug_info    0x0000b47c      0x228 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000b47c                __ARM_grp..debug_info$motor_simulation.h$.2_QD0000_GJAm99c4135_300000
+                0x0000b47c                __ARM_grp.motor_simulation.h.2_QD0000_GJAm99c4135_300000
+ .debug_info    0x0000b6a4      0x150 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000b6a4                __ARM_grp..debug_info$motor_simulation.c$.2_UI0000_ynNuPqWoOo8_700000
+                0x0000b6a4                __ARM_grp.motor_simulation.c.2_UI0000_ynNuPqWoOo8_700000
+ .debug_info    0x0000b7f4       0xbc D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000b7f4                __ARM_grp..debug_info$fabsf$.2_oT0000_wJ9jF93aDp2_500000
+                0x0000b7f4                __ARM_grp.fabsf.2_oT0000_wJ9jF93aDp2_500000
 
-.debug_abbrev   0x00000000     0x2028
- .debug_abbrev  0x00000000      0x27c build/main.o
- .debug_abbrev  0x0000027c      0x172 build/stm32f1xx_it.o
- .debug_abbrev  0x000003ee      0x1f3 build/stm32f1xx_hal_msp.o
- .debug_abbrev  0x000005e1      0x35f build/stm32f1xx_hal_uart.o
- .debug_abbrev  0x00000940      0x232 build/stm32f1xx_hal.o
- .debug_abbrev  0x00000b72      0x2d6 build/stm32f1xx_hal_rcc.o
- .debug_abbrev  0x00000e48      0x222 build/stm32f1xx_hal_gpio.o
- .debug_abbrev  0x0000106a      0x261 build/stm32f1xx_hal_dma.o
- .debug_abbrev  0x000012cb      0x3aa build/stm32f1xx_hal_cortex.o
- .debug_abbrev  0x00001675      0x140 build/system_stm32f1xx.o
- .debug_abbrev  0x000017b5      0x132 build/bsp_dwt.o
- .debug_abbrev  0x000018e7       0x1d build/startup_stm32f103xe.o
- .debug_abbrev  0x00001904       0xb7 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_abbrev  0x000019bb       0xc9 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_abbrev  0x00001a84      0x5a4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x00001a84                __ARM_grp..debug_abbrev.group.2_Am0000_lbphKItke$2_000000
+.debug_abbrev   0x00000000     0x21a3
+ .debug_abbrev  0x00000000      0x293 build/main.o
+ .debug_abbrev  0x00000293      0x172 build/stm32f1xx_it.o
+ .debug_abbrev  0x00000405      0x1f3 build/stm32f1xx_hal_msp.o
+ .debug_abbrev  0x000005f8      0x35f build/stm32f1xx_hal_uart.o
+ .debug_abbrev  0x00000957      0x232 build/stm32f1xx_hal.o
+ .debug_abbrev  0x00000b89      0x2d6 build/stm32f1xx_hal_rcc.o
+ .debug_abbrev  0x00000e5f      0x222 build/stm32f1xx_hal_gpio.o
+ .debug_abbrev  0x00001081      0x261 build/stm32f1xx_hal_dma.o
+ .debug_abbrev  0x000012e2      0x3aa build/stm32f1xx_hal_cortex.o
+ .debug_abbrev  0x0000168c      0x140 build/system_stm32f1xx.o
+ .debug_abbrev  0x000017cc      0x164 build/pid.o
+ .debug_abbrev  0x00001930      0x132 build/bsp_dwt.o
+ .debug_abbrev  0x00001a62       0x1d build/startup_stm32f103xe.o
+ .debug_abbrev  0x00001a7f       0xb7 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_abbrev  0x00001b36       0xc9 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_abbrev  0x00001bff      0x5a4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x00001bff                __ARM_grp..debug_abbrev.group.2_Am0000_lbphKItke$2_000000
 
-.debug_loc      0x00000000     0x7732
- .debug_loc     0x00000000       0xb2 build/main.o
- .debug_loc     0x000000b2       0x40 build/stm32f1xx_it.o
- .debug_loc     0x000000f2      0x141 build/stm32f1xx_hal_msp.o
- .debug_loc     0x00000233     0x4ff4 build/stm32f1xx_hal_uart.o
- .debug_loc     0x00005227      0x1f9 build/stm32f1xx_hal.o
- .debug_loc     0x00005420      0x7c6 build/stm32f1xx_hal_rcc.o
- .debug_loc     0x00005be6      0x56c build/stm32f1xx_hal_gpio.o
- .debug_loc     0x00006152      0x98d build/stm32f1xx_hal_dma.o
- .debug_loc     0x00006adf      0x8b4 build/stm32f1xx_hal_cortex.o
- .debug_loc     0x00007393      0x11b build/system_stm32f1xx.o
- .debug_loc     0x000074ae       0xb0 build/bsp_dwt.o
- .debug_loc     0x0000755e       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x00007586       0x40 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x000075c6       0x48 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x0000760e       0xac D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x000076ba       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x000076e2       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_loc     0x0000770a       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+.debug_loc      0x00000000     0x783e
+ .debug_loc     0x00000000       0xbe build/main.o
+ .debug_loc     0x000000be       0x40 build/stm32f1xx_it.o
+ .debug_loc     0x000000fe      0x141 build/stm32f1xx_hal_msp.o
+ .debug_loc     0x0000023f     0x4ff4 build/stm32f1xx_hal_uart.o
+ .debug_loc     0x00005233      0x1f9 build/stm32f1xx_hal.o
+ .debug_loc     0x0000542c      0x7c6 build/stm32f1xx_hal_rcc.o
+ .debug_loc     0x00005bf2      0x56c build/stm32f1xx_hal_gpio.o
+ .debug_loc     0x0000615e      0x98d build/stm32f1xx_hal_dma.o
+ .debug_loc     0x00006aeb      0x8b4 build/stm32f1xx_hal_cortex.o
+ .debug_loc     0x0000739f      0x11b build/system_stm32f1xx.o
+ .debug_loc     0x000074ba      0x100 build/pid.o
+ .debug_loc     0x000075ba       0xb0 build/bsp_dwt.o
+ .debug_loc     0x0000766a       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x00007692       0x40 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x000076d2       0x48 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x0000771a       0xac D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x000077c6       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x000077ee       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_loc     0x00007816       0x28 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
 
-.debug_aranges  0x00000000      0x6a0
+.debug_aranges  0x00000000      0x6c8
  .debug_aranges
                 0x00000000       0x40 build/main.o
  .debug_aranges
@@ -2264,15 +2259,17 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgc
  .debug_aranges
                 0x000005e8       0x28 build/system_stm32f1xx.o
  .debug_aranges
-                0x00000610       0x28 build/bsp_dwt.o
+                0x00000610       0x28 build/pid.o
  .debug_aranges
-                0x00000638       0x28 build/startup_stm32f103xe.o
+                0x00000638       0x28 build/bsp_dwt.o
  .debug_aranges
-                0x00000660       0x20 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+                0x00000660       0x28 build/startup_stm32f103xe.o
  .debug_aranges
-                0x00000680       0x20 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+                0x00000688       0x20 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_aranges
+                0x000006a8       0x20 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
 
-.debug_ranges   0x00000000      0x5e0
+.debug_ranges   0x00000000      0x5f8
  .debug_ranges  0x00000000       0x30 build/main.o
  .debug_ranges  0x00000030       0x58 build/stm32f1xx_it.o
  .debug_ranges  0x00000088       0x20 build/stm32f1xx_hal_msp.o
@@ -2283,61 +2280,64 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgc
  .debug_ranges  0x00000470       0x70 build/stm32f1xx_hal_dma.o
  .debug_ranges  0x000004e0       0xb0 build/stm32f1xx_hal_cortex.o
  .debug_ranges  0x00000590       0x18 build/system_stm32f1xx.o
- .debug_ranges  0x000005a8       0x18 build/bsp_dwt.o
- .debug_ranges  0x000005c0       0x20 build/startup_stm32f103xe.o
+ .debug_ranges  0x000005a8       0x18 build/pid.o
+ .debug_ranges  0x000005c0       0x18 build/bsp_dwt.o
+ .debug_ranges  0x000005d8       0x20 build/startup_stm32f103xe.o
 
-.debug_line     0x00000000     0x7597
- .debug_line    0x00000000      0x379 build/main.o
- .debug_line    0x00000379      0x254 build/stm32f1xx_it.o
- .debug_line    0x000005cd      0x263 build/stm32f1xx_hal_msp.o
- .debug_line    0x00000830     0x3441 build/stm32f1xx_hal_uart.o
- .debug_line    0x00003c71      0x4d0 build/stm32f1xx_hal.o
- .debug_line    0x00004141      0xc4c build/stm32f1xx_hal_rcc.o
- .debug_line    0x00004d8d      0x59a build/stm32f1xx_hal_gpio.o
- .debug_line    0x00005327      0xf8c build/stm32f1xx_hal_dma.o
- .debug_line    0x000062b3      0x649 build/stm32f1xx_hal_cortex.o
- .debug_line    0x000068fc      0x1e7 build/system_stm32f1xx.o
- .debug_line    0x00006ae3      0x151 build/bsp_dwt.o
- .debug_line    0x00006c34       0x72 build/startup_stm32f103xe.o
- .debug_line    0x00006ca6      0x1cd C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_line    0x00006e73      0x144 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_line    0x00006fb7       0x40 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x00006ff7       0x7c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x00007073       0x64 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x000070d7       0x8c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x00007163       0xe4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x00007247       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x0000729b       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x000072ef       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_line    0x00007343       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x00007343                __ARM_grp..debug_line$stdint.h$.2_8G1000_iVMQGGhr3g5_300000
- .debug_line    0x00007397       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x00007397                __ARM_grp..debug_line$stdlib.h$.2_AV0000_0_hgF4meTA6_300000
- .debug_line    0x000073eb       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x000073eb                __ARM_grp..debug_line$math.h$.2_FA3000_TchhkGiMi$e_700000
- .debug_line    0x0000743f       0x8c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x0000743f                __ARM_grp..debug_line$motor_simulation.h$.2_QD0000_GJAm99c4135_300000
- .debug_line    0x000074cb       0x78 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x000074cb                __ARM_grp..debug_line$motor_simulation.c$.2_UI0000_ynNuPqWoOo8_700000
- .debug_line    0x00007543       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
-                0x00007543                __ARM_grp..debug_line$fabsf$.2_oT0000_wJ9jF93aDp2_500000
+.debug_line     0x00000000     0x76a0
+ .debug_line    0x00000000      0x37a build/main.o
+ .debug_line    0x0000037a      0x254 build/stm32f1xx_it.o
+ .debug_line    0x000005ce      0x263 build/stm32f1xx_hal_msp.o
+ .debug_line    0x00000831     0x3441 build/stm32f1xx_hal_uart.o
+ .debug_line    0x00003c72      0x4d0 build/stm32f1xx_hal.o
+ .debug_line    0x00004142      0xc4c build/stm32f1xx_hal_rcc.o
+ .debug_line    0x00004d8e      0x59a build/stm32f1xx_hal_gpio.o
+ .debug_line    0x00005328      0xf8c build/stm32f1xx_hal_dma.o
+ .debug_line    0x000062b4      0x649 build/stm32f1xx_hal_cortex.o
+ .debug_line    0x000068fd      0x1e7 build/system_stm32f1xx.o
+ .debug_line    0x00006ae4      0x108 build/pid.o
+ .debug_line    0x00006bec      0x151 build/bsp_dwt.o
+ .debug_line    0x00006d3d       0x72 build/startup_stm32f103xe.o
+ .debug_line    0x00006daf      0x1cd C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_line    0x00006f7c      0x144 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_line    0x000070c0       0x40 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x00007100       0x7c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x0000717c       0x64 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x000071e0       0x8c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x0000726c       0xe4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x00007350       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x000073a4       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x000073f8       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_line    0x0000744c       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000744c                __ARM_grp..debug_line$stdint.h$.2_8G1000_iVMQGGhr3g5_300000
+ .debug_line    0x000074a0       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x000074a0                __ARM_grp..debug_line$stdlib.h$.2_AV0000_0_hgF4meTA6_300000
+ .debug_line    0x000074f4       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x000074f4                __ARM_grp..debug_line$math.h$.2_FA3000_TchhkGiMi$e_700000
+ .debug_line    0x00007548       0x8c D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x00007548                __ARM_grp..debug_line$motor_simulation.h$.2_QD0000_GJAm99c4135_300000
+ .debug_line    0x000075d4       0x78 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x000075d4                __ARM_grp..debug_line$motor_simulation.c$.2_UI0000_ynNuPqWoOo8_700000
+ .debug_line    0x0000764c       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+                0x0000764c                __ARM_grp..debug_line$fabsf$.2_oT0000_wJ9jF93aDp2_500000
 
-.debug_str      0x00000000     0x2313
- .debug_str     0x00000000     0x2313 build/main.o
-                                0x89f (size before relaxing)
- .debug_str     0x00002313      0x639 build/stm32f1xx_it.o
- .debug_str     0x00002313      0xa7f build/stm32f1xx_hal_msp.o
- .debug_str     0x00002313      0xcd0 build/stm32f1xx_hal_uart.o
- .debug_str     0x00002313      0x8ee build/stm32f1xx_hal.o
- .debug_str     0x00002313      0x607 build/stm32f1xx_hal_rcc.o
- .debug_str     0x00002313      0x3dc build/stm32f1xx_hal_gpio.o
- .debug_str     0x00002313      0x5d9 build/stm32f1xx_hal_dma.o
- .debug_str     0x00002313      0x993 build/stm32f1xx_hal_cortex.o
- .debug_str     0x00002313      0x230 build/system_stm32f1xx.o
- .debug_str     0x00002313      0x2af build/bsp_dwt.o
- .debug_str     0x00002313       0x6e build/startup_stm32f103xe.o
- .debug_str     0x00002313      0x193 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_str     0x00002313      0x1e0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+.debug_str      0x00000000     0x23aa
+ .debug_str     0x00000000     0x23aa build/main.o
+                                0x8a8 (size before relaxing)
+ .debug_str     0x000023aa      0x639 build/stm32f1xx_it.o
+ .debug_str     0x000023aa      0xa7f build/stm32f1xx_hal_msp.o
+ .debug_str     0x000023aa      0xcd0 build/stm32f1xx_hal_uart.o
+ .debug_str     0x000023aa      0x8ee build/stm32f1xx_hal.o
+ .debug_str     0x000023aa      0x607 build/stm32f1xx_hal_rcc.o
+ .debug_str     0x000023aa      0x3dc build/stm32f1xx_hal_gpio.o
+ .debug_str     0x000023aa      0x5d9 build/stm32f1xx_hal_dma.o
+ .debug_str     0x000023aa      0x993 build/stm32f1xx_hal_cortex.o
+ .debug_str     0x000023aa      0x230 build/system_stm32f1xx.o
+ .debug_str     0x000023aa      0x230 build/pid.o
+ .debug_str     0x000023aa      0x2af build/bsp_dwt.o
+ .debug_str     0x000023aa       0x6e build/startup_stm32f103xe.o
+ .debug_str     0x000023aa      0x193 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_str     0x000023aa      0x1e0 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
 
 .comment        0x00000000      0x311
  .comment       0x00000000       0x24 build/main.o
@@ -2351,6 +2351,7 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgc
  .comment       0x00000024       0x13 build/stm32f1xx_hal_dma.o
  .comment       0x00000024       0x13 build/stm32f1xx_hal_cortex.o
  .comment       0x00000024       0x13 build/system_stm32f1xx.o
+ .comment       0x00000024       0x13 build/pid.o
  .comment       0x00000024       0x13 build/bsp_dwt.o
  .comment       0x00000024       0x13 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
  .comment       0x00000024       0x13 C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
@@ -2361,7 +2362,7 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgc
  .arm_vfe_header
                 0x00000000        0x4 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
 
-.debug_frame    0x00000000     0x116c
+.debug_frame    0x00000000     0x11b0
  .debug_frame   0x00000000       0x88 build/main.o
  .debug_frame   0x00000088       0xc0 build/stm32f1xx_it.o
  .debug_frame   0x00000148       0x64 build/stm32f1xx_hal_msp.o
@@ -2372,16 +2373,17 @@ LOAD C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/thumb/v7-m/nofp\libgc
  .debug_frame   0x00000bbc      0x140 build/stm32f1xx_hal_dma.o
  .debug_frame   0x00000cfc      0x19c build/stm32f1xx_hal_cortex.o
  .debug_frame   0x00000e98       0x30 build/system_stm32f1xx.o
- .debug_frame   0x00000ec8       0x40 build/bsp_dwt.o
- .debug_frame   0x00000f08       0x2c C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00000f34       0x2c C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
- .debug_frame   0x00000f60       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_frame   0x00000fa4       0x50 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_frame   0x00000ff4       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_frame   0x00001048       0x58 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
- .debug_frame   0x000010a0       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_frame   0x00000ec8       0x44 build/pid.o
+ .debug_frame   0x00000f0c       0x40 build/bsp_dwt.o
+ .debug_frame   0x00000f4c       0x2c C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00000f78       0x2c C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00000fa4       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_frame   0x00000fe8       0x50 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_frame   0x00001038       0x54 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_frame   0x0000108c       0x58 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
  .debug_frame   0x000010e4       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
  .debug_frame   0x00001128       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
+ .debug_frame   0x0000116c       0x44 D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib(motor_simulation.o)
 
 .debug_loclists
                 0x00000000      0x230
@@ -3200,6 +3202,7 @@ nanf                                              C:/msys64/mingw64/bin/../lib/g
 pFlash                                            build/stm32f1xx_hal_flash.o
                                                   build/stm32f1xx_hal_flash_ex.o
 pid_init                                          build/pid.o
+                                                  build/main.o
 prev_err                                          build/pid.o
 raise                                             C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-signal.o)
                                                   C:/msys64/mingw64/bin/../lib/gcc/arm-none-eabi/13.3.0/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-abort.o)
