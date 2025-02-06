@@ -33,10 +33,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define KP 60
-#define KI 13
-#define KD 1.3
-#define I_LIMIT 10
+#define KP 200
+#define KI 60
+#define KD 8.5
+#define I_LIMIT 0.01
 #define mode velocity_mode
 #define cut_fequency 3
 
@@ -122,30 +122,30 @@ int main(void)
   {
     dt = DWT_GetDeltaT(&DWT_CNT);
     t += dt;
-    current = Get_Motor_Current(&Motor_v);
-    velocity = Get_Motor_Velocity(&Motor_v);
-    angle = Get_Motor_Angle(&Motor_v);
+    
+		
+//		current = Get_Motor_Current(&Motor_v);
+//    velocity = Get_Motor_Velocity(&Motor_v);
+//    angle = Get_Motor_Angle(&Motor_v);
+	  
+		
+		current = Get_Motor_Current(&Motor_a1);
+    velocity = Get_Motor_Velocity(&Motor_a1);
+    angle = Get_Motor_Angle(&Motor_a1);
+		
+		
 		filter_k=2*Pi*cut_fequency*dt;
 
 		prev_velo=(velocity*filter_k+prev_velo*(1-filter_k));
 		
-    switch (1)
-    {
-    case velocity_mode:
-      err = tgt - prev_velo;
-      break;
-    
-    case angle_mode:
-      err = tgt - angle;
-      break;
-
-    default:
-      break;
-    }
-
-    input = pid_calc(&PID_v,err);
-    Motor_Simulation(&Motor_v,input,dt);
-		tgt = 10*sin(10*t);
+    //err = tgt - prev_velo;
+		err = tgt - angle;
+		
+    //input = pid_calc(&PID_v,err);
+		input = pid_calc(&PID_a,err);
+    //Motor_Simulation(&Motor_v,input,dt);
+		Motor_Simulation(&Motor_a1,input,dt);
+		//tgt = 10*sin(4.5*t);
 		//tgt = t;
     /* USER CODE END WHILE */
 
