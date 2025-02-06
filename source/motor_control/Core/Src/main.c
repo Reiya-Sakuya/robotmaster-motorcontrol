@@ -33,11 +33,17 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define KP 0.01
-#define KI 0.01
-#define KD 0.01
-#define I_TOP 10
-#define I_BOTTOM -10
+#define KP 60
+#define KI 13
+#define KD 1.3
+#define I_LIMIT 10
+#define mode velocity_mode
+#define cut_fequency 3
+
+#define Pi 3.141
+#define velocity_mode 1
+#define angle_mode 2
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,11 +55,10 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-motorObject_t Motor; 
-pid_t PID;
+motorObject_t Motor_v,Motor_a1,Motor_a2; 
+pid_t PID_v,PID_a,PID_a1,PID_a2;
 uint32_t DWT_CNT;
-float dt;
-float t;
+float dt, t, current, velocity, angle, input, err, tgt, prev_velo, filter_k;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,21 +106,47 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   DWT_Init(72);
-  Motor_Object_Init(&Motor);
-  pid_init(&PID,KP,KI,KD,I_TOP,I_BOTTOM);
+  Motor_Object_Init(&Motor_v);
+	Motor_Object_Init(&Motor_a1);
+	Motor_Object_Init(&Motor_a2);
+	pid_init(&PID_v,60,13,1.3,10);
+  pid_init(&PID_a,KP,KI,KD,I_LIMIT);
+
+  tgt = 0;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    dt = DWT_GetDeltaT(&DWT_CNT);//利用DWT定时器获得仿真周期
+    dt = DWT_GetDeltaT(&DWT_CNT);
     t += dt;
-    Current = Get_Motor_Current(&Motor);//读取电机电流
-    Velocity = Get_Motor_Velocity(&Motor);//读取电机转速
-    Angle = Get_Motor_Angle(&Motor);//读取电机角度
-    Input = pid_calc(&PID,0);//自行编写PID计算函数，计算出输入电压
-    Motor_Simulation(&Motor,Input,dt);
+    current = Get_Motor_Current(&Motor_v);
+    velocity = Get_Motor_Velocity(&Motor_v);
+    angle = Get_Motor_Angle(&Motor_v);
+		filter_k=2*Pi*cut_fequency*dt;
+
+		prev_velo=(velocity*filter_k+prev_velo*(1-filter_k));
+		
+    switch (1)
+    {
+    case velocity_mode:
+      err = tgt - prev_velo;
+      break;
+    
+    case angle_mode:
+      err = tgt - angle;
+      break;
+
+    default:
+      break;
+    }
+
+    input = pid_calc(&PID_v,err);
+    Motor_Simulation(&Motor_v,input,dt);
+		tgt = 10*sin(10*t);
+		//tgt = t;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

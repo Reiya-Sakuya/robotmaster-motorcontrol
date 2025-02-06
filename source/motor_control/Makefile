@@ -135,7 +135,8 @@ endif
 
 
 # Generate dependency information
-CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
+CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections \
+          -mfloat-abi=soft -mfpu=auto -fshort-wchar  # 添加浮点和 wchar_t 选项
 
 
 #######################################
@@ -145,9 +146,11 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT = STM32F103RCTx_FLASH.ld
 
 # libraries
-LIBS = -lc -lm -lnosys "D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib"
+LIBS = -lc -lnosys "D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation/motor_simulationM3.lib" -lm
 LIBDIR = -L"D:/VScode/Code/c_and_c++/homework/rm_big/source/motor_control/Motor_simulation"
-LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections 
+LDFLAGS = $(MCU) -specs=nano.specs -specs=nosys.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) \
+          -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections \
+          -mfloat-abi=soft -mfpu=auto  # 添加浮点选项
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin

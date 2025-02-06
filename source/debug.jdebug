@@ -4,8 +4,8 @@
 *                         www.segger.com                             *
 **********************************************************************
 
-File          : D:/VScode/Code/c and c++/homework/rm_big/source/debug.jdebug
-Created       : 31 Jan 2025 12:36
+File          : 
+Created       : 6 Feb 2025 16:55
 Ozone Version : V3.24
 */
 
@@ -22,17 +22,18 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("D:/VScode/Code/c and c++/homework/rm_big/source", "$(ProjectDir)");
-  Project.AddPathSubstitute ("d:/vscode/code/c and c++/homework/rm_big/source", "$(ProjectDir)");
+  Project.AddPathSubstitute ("D:/VScode/Code/c_and_c++/homework/rm_big/source", "$(ProjectDir)");
+  Project.AddPathSubstitute ("d:/vscode/code/c_and_c++/homework/rm_big/source", "$(ProjectDir)");
   Project.SetDevice ("STM32F103RC");
-  Project.SetHostIF ("USB", "20724815");
+  Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
-  Project.SetTIFSpeed ("4 MHz");
+  Project.SetTIFSpeed ("5 MHz");
   Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M3.svd");
   //
   // User settings
   //
-  File.Open ("$(ProjectDir)/motor_control/build/motor_control.elf");
+  Edit.SysVar (VAR_HSS_SPEED, 1000000);
+  File.Open ("$(ProjectDir)/motor_control/MDK-ARM/motor_control/motor_control.axf");
 }
 
 /*********************************************************************
