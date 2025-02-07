@@ -33,16 +33,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define KP 200
-#define KI 60
-#define KD 8.5
-#define I_LIMIT 0.01
-#define mode velocity_mode
+#define KP 30
+#define KI 10
+#define KD 0.3
+#define I_LIMIT 1
+
 #define cut_fequency 3
 
 #define Pi 3.141
-#define velocity_mode 1
-#define angle_mode 2
 
 /* USER CODE END PD */
 
@@ -55,10 +53,12 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-motorObject_t Motor_v,Motor_a1,Motor_a2; 
+motorObject_t Motor_v,Motor_a,Motor_a2; 
 pid_t PID_v,PID_a,PID_a1,PID_a2;
 uint32_t DWT_CNT;
-float dt, t, current, velocity, angle, input, err, tgt, prev_velo, filter_k;
+float dt, t;
+float angle, velocity, angle_1, velocity_1, angle_2, velocity_2;
+float input, input_1, input_2, err, err_1, err_2, tgt, prev_velo, prev_velo_1, filter_k;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,12 +107,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
   DWT_Init(72);
   Motor_Object_Init(&Motor_v);
-	Motor_Object_Init(&Motor_a1);
+	Motor_Object_Init(&Motor_a);
 	Motor_Object_Init(&Motor_a2);
 	pid_init(&PID_v,60,13,1.3,10);
-  pid_init(&PID_a,KP,KI,KD,I_LIMIT);
+  pid_init(&PID_a,300,60,12.5,0.01);
+	pid_init(&PID_a1,30,10,0.3,0.01);
+	pid_init(&PID_a2,40,10,0.07,10);
 
-  tgt = 0;
+	tgt = 0;
+  //tgt = 6.282;
 
   /* USER CODE END 2 */
 
@@ -122,30 +125,38 @@ int main(void)
   {
     dt = DWT_GetDeltaT(&DWT_CNT);
     t += dt;
-    
 		
-//		current = Get_Motor_Current(&Motor_v);
-//    velocity = Get_Motor_Velocity(&Motor_v);
-//    angle = Get_Motor_Angle(&Motor_v);
-	  
 		
-		current = Get_Motor_Current(&Motor_a1);
-    velocity = Get_Motor_Velocity(&Motor_a1);
-    angle = Get_Motor_Angle(&Motor_a1);
+    velocity = Get_Motor_Velocity(&Motor_v);
+    angle = Get_Motor_Angle(&Motor_v);
+		
+    velocity_1 = Get_Motor_Velocity(&Motor_a);
+    angle_1 = Get_Motor_Angle(&Motor_a);
+
+		velocity_2 = Get_Motor_Velocity(&Motor_a2);
+    angle_2 = Get_Motor_Angle(&Motor_a2);
 		
 		
 		filter_k=2*Pi*cut_fequency*dt;
 
+		
 		prev_velo=(velocity*filter_k+prev_velo*(1-filter_k));
+    prev_velo_1=(velocity_2*filter_k+prev_velo_1*(1-filter_k));
 		
-    //err = tgt - prev_velo;
-		err = tgt - angle;
+    err = tgt - prev_velo;
+		err_1 = tgt - angle_1;
+		err_2 = tgt - angle_2;
 		
-    //input = pid_calc(&PID_v,err);
-		input = pid_calc(&PID_a,err);
-    //Motor_Simulation(&Motor_v,input,dt);
-		Motor_Simulation(&Motor_a1,input,dt);
-		//tgt = 10*sin(4.5*t);
+    input = pid_calc(&PID_v,err);
+		input_1 = pid_calc(&PID_a,err_1);
+		input_2 = pid_calc(&PID_a2,pid_calc(&PID_a1,err_2)-prev_velo_1);
+		
+    Motor_Simulation(&Motor_v,input,dt);
+		Motor_Simulation(&Motor_a,input_1,dt);
+		Motor_Simulation(&Motor_a2,input_2,dt);
+		
+		
+		tgt = 10*sin(4.5*t);
 		//tgt = t;
     /* USER CODE END WHILE */
 

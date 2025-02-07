@@ -6,6 +6,8 @@ typedef struct pid
     float ki;
     float kd;
     float integral_limit;
+    float prev_err;
+    float intergral_err;
 }pid_t;
 
 float pid_init(pid_t *args,float arg_kp,float arg_ki,float arg_kd,float integral_limit);
